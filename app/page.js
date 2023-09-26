@@ -8,9 +8,6 @@ import BusProviders from "./components/bus-providers";
 import Deliver from "./components/deliver";
 import { fetchBusData, fetchCityData } from "@/utils/fetchData";
 
-export async function getServerSideProps(context){
-    console.log(context);
-}
 
 export default function Home() {
     const cities = fetchCityData();

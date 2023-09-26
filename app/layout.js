@@ -11,11 +11,6 @@ import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'GoBus',
-  description: 'A bus ticket booking web app crafted by naol',
-  icon: '/favicon.ico',
-}
 
 const client = createClient({ url: "http://localhost:1337/graphql",
 exchanges: [cacheExchange, fetchExchange],})
