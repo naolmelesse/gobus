@@ -9,7 +9,7 @@ export const POST = async function handler(request, response){
       const user = sessionUser?.user;
       const data = await request.json();
       if(user){
-        const stripeID = user['https://localhost:3000/stripe_customer_id'];
+        const stripeID = user['https://gobus-liard.vercel.app/stripe_customer_id'];
         
         const session = await stripe.checkout.sessions.create({
                 submit_type: "pay",
@@ -29,8 +29,8 @@ export const POST = async function handler(request, response){
                     quantity: data.quantity,
                   },
                 ],
-                    success_url: `http://localhost:3000/success?&session_id={CHECKOUT_SESSION_ID}`,
-                    cancel_url: `http://localhost:3000/canceled`,
+                    success_url: `https://gobus-liard.vercel.app/success?&session_id={CHECKOUT_SESSION_ID}`,
+                    cancel_url: `https://gobus-liard.vercel.app/canceled`,
                   });
                   return NextResponse.json(session);
       }else{
@@ -51,8 +51,8 @@ export const POST = async function handler(request, response){
                     quantity: data.quantity,
                   },
                 ],
-                    success_url: `http://localhost:3000/success?&session_id={CHECKOUT_SESSION_ID}`,
-                    cancel_url: `http://localhost:3000/canceled`,
+                    success_url: `https://gobus-liard.vercel.app/success?&session_id={CHECKOUT_SESSION_ID}`,
+                    cancel_url: `https://gobus-liard.vercel.app/canceled`,
                   });
                   return NextResponse.json(session);
       }
