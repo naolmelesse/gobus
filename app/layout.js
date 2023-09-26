@@ -12,7 +12,7 @@ import { UserProvider } from '@auth0/nextjs-auth0/client';
 const inter = Inter({ subsets: ['latin'] })
 
 
-const client = createClient({ url: "https://gobus-liard.vercel.app/graphql",
+const client = createClient({ url: "https://gobus-backend-railway-production.up.railway.app/graphql",
 exchanges: [cacheExchange, fetchExchange],})
 
 export default function RootLayout({ children }) {

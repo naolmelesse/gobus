@@ -19,38 +19,38 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row gap-5  lg:gap-20 w-2/3">
         <div className="flex flex-col mt-4 mx-0 gap-1.5">
           <h3 className="text-[1rem] font-semibold text-[#fefefe]">Popular destinations</h3>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Addis Ababa</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Dire Dawa</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Jimma</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Mekele</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Bahir Dar</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Addis Ababa</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Dire Dawa</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Jimma</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Mekele</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Bahir Dar</a>
         </div>
 
         <div className="flex flex-col mt-4 mx-0 gap-1.5">
           <h3 className="text-[1rem] font-semibold text-[#fefefe]">Partners</h3>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Trivago</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">MakeMyTrip</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Furgo</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Tripy</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Trivago</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">MakeMyTrip</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Furgo</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Tripy</a>
         </div>
 
         <div className="flex flex-col mt-4 mx-0 gap-1.5">
           <h3 className="text-[1rem] font-semibold text-[#fefefe]">About</h3>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">About Us</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Contact</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Services</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Blog</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Careers</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Mobile version</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Offers</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">About Us</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Contact</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Services</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Blog</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Careers</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Mobile version</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Offers</a>
         </div>
 
         <div className="flex flex-col mt-4 mx-0 gap-1.5">
         <h3 className="text-[1rem] font-semibold text-[#fefefe]">Info</h3>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">FAQs</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Refund</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Tickets</a>
-          <a href="#" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Help Desk</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">FAQs</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Refund</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Tickets</a>
+          <a href="" className="hover:text-gray-400 transition duration-300 font-extralight text-[0.9rem]">Help Desk</a>
         </div>
         </div>
 
