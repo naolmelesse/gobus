@@ -16,13 +16,13 @@ export default function Search(){
         };
     const fromData = getFromCity(search.fromID);
     const toData = getToCity(search.toID);
-    const tripSearchResult = doTripsExist(fromData, toData);
+    const {foundTrip, tripsExist} = doTripsExist(fromData, toData);
     return(
         <div>
             <SearchNav search={search}/>
             <div className="flex">
                 <SearchFilter/>
-                <Trips buses={tripSearchResult} tripData={search}/>
+                <Trips buses={foundTrip} tripsExist={tripsExist} tripData={search}/>
             </div>
         </div>
     )

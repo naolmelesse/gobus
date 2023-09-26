@@ -1,8 +1,8 @@
 import TripCard from "./trip-card";
 
-export default function Trips({buses, tripData}){
+export default function Trips({buses, tripData, tripsExist}){
 
-    if(buses.length == 0){
+    if(!tripsExist){
         return(
             <h1 className="text-center">No buses found.</h1>
         )

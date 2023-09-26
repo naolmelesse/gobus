@@ -20,6 +20,7 @@ export function getToCity(id){
 }
 
 export function doTripsExist(fromCity, toCity){
+    let tripsExist = false;
     const foundTrip = [];
     if(fromCity != undefined && toCity != undefined){
         const fromTrips = fromCity.trip_froms.data;
@@ -30,5 +31,6 @@ export function doTripsExist(fromCity, toCity){
             })
         })
     }
-    return foundTrip;
+    if(foundTrip.length > 0) tripsExist = true;
+    return {tripsExist, foundTrip};
 }
