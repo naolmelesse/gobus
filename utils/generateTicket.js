@@ -9,7 +9,7 @@ export async function GenerateTicket(data){
             "data" :{
                 traveler_name: data.name,
                 traveler_email: data.email,
-                date: dayjs(data.date).format("MM/DD/YYYY HH:mm"),
+                date: new Date(data.date).toISOString(),
                 ticket_id: generateTicketID(data.date, data.seats),
                 departure: data.from,
                 destination: data.to,
