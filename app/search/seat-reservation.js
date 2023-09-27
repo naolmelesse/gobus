@@ -23,7 +23,7 @@ export default function SeatReservation({bookingData, id, reservedSeats}) {
       for (let seat = 1; seat <= seatsPerRow; seat++) {
         const seatNumber = `${row}${String.fromCharCode(64 + seat)}`;
         const isSelected = selectedSeats.includes(seatNumber);
-        if(reservedSeats == null) reservedSeats = [];
+
         if(!reservedSeats.includes(seatNumber)){
           seatElements.push(
             <div className={`flex flex-col items-center ${seat == 2 ? 'mr-8' : ''} ${seat == 3 ? 'ml-8' : ''}`}>

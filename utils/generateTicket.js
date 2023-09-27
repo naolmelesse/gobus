@@ -1,35 +1,32 @@
 import axios from "axios";
 import dayjs from "dayjs";
 
-export async function GenerateTicket(data){
-    // console.log(dayjs(data.date).format("hh:mmA ddd-DD-MMM"));
+export function GenerateTicket(tripData){
+
     try{
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/tickets`, 
+        let response;
+        axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/tickets`, 
         {
-            "data" :{
-                traveler_name: data.name,
-                traveler_email: data.email,
-                date: new Date(data.date).toISOString(),
-                ticket_id: generateTicketID(data.date, data.seats),
-                departure: data.from,
-                destination: data.to,
-                seat_number: data.seats,
-                slug: generateTicketID(data.date, data.seats),
+            "data" : {
+                traveler_name: tripData.name,
+                traveler_email: tripData.email,
+                date: new Date(tripData.date).toISOString(),
+                ticket_id: generateTicketID(tripData.date, tripData.seats, tripData.id),
+                departure: tripData.from,
+                destination: tripData.to,
+                seat_number: tripData.seats,
+                slug: generateTicketID(tripData.date, tripData.seats, tripData.id),
             }
+        }).then(res => {
+            response = res.data;
         })
-        console.log(response);
+        return response;
     }catch(err){
             console.log("error occurred: ", err.message);
     }
-    // .then((res) => {
-    //     console.log(res);
-    //     // return res.data;
-    // }).catch(err => {
-    //     console.log("error occurred: ", err.message);
-    // })
 }
 
-function generateTicketID(date, seats){
+export function generateTicketID(date, seats, id){
     const ticketdate = new Date(date);
-    return "TNR" + dayjs(ticketdate).format("DDMMHH") + seats.split(", ").join("");
+    return "TNR" + dayjs(ticketdate).format("DDMMHH") + id+ seats.split(", ").join("");
 }

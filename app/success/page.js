@@ -9,8 +9,8 @@ export default async function Page({searchParams}){
         searchParams.session_id
     );
     return(
-        <div>
-            <h3>Trip succesfully booked 🚀</h3>
+        <div className="w-4/5 mx-[auto] gap-5">
+            <h3 className="text-center text-xl">Trip succesfully booked ✅</h3>
             <TripDetails data={data}/>
 
         </div>

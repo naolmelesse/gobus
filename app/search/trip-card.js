@@ -1,12 +1,13 @@
 import { formatDate, getTripDuration } from "@/lib/formatDate";
 import SeatReservation from "./seat-reservation";
 import { useState } from "react";
+import dayjs from "dayjs";
 
 export default function TripCard({bus, tripData, id}){
     const departureTime = formatDate(tripData.travelDate, bus.departure);
     const arrivalTime = formatDate(tripData.travelDate, bus.arrival);
     const duration = getTripDuration(tripData.travelDate, bus.departure, bus.arrival);
-    const bookingData = {from: tripData.from, to: tripData.to, date: tripData.traveldate, price: bus.fare};
+    const bookingData = {from: tripData.from, to: tripData.to, date: new Date(`${dayjs(tripData.travelDate).format("YYYY-MM-DD")}T${bus.departure}`).toISOString(), price: bus.fare};
     const [seatsVisible, setSeatsVisible] = useState(false);
     return(
         <div className="flex flex-col my-3 border px-2 py-4">
@@ -30,7 +31,7 @@ export default function TripCard({bus, tripData, id}){
                 </div>
             </div>
             <div className={`${seatsVisible? '' : 'hidden'} `}>
-                <SeatReservation reservedSeats={bus.reserved_seats.seats} id={id} bookingData={bookingData}/>
+                <SeatReservation reservedSeats={bus.reserved_seats == null ? [] : bus.reserved_seats.seats} id={id} bookingData={bookingData}/>
             </div>
         </div>
     )
