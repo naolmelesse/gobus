@@ -17,7 +17,7 @@ export async function updateTrip(booked, id){
         if(res_seats != null || undefined){
           new_res_seats.push(...res_seats.seats);
         }
-        axios.put(`${process.env.NEXT_PUBLIC_BACKEND_URL}trips/${id}`,
+        await axios.put(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/trips/${id}`,
             {
                 "data": {
                     "reserved_seats": {seats: new_res_seats},
@@ -25,16 +25,8 @@ export async function updateTrip(booked, id){
                 }
             }
         ).then(response => {
-          console.log(response);
+          console.log(response.data);
         })
     }
   ;}
   
-  export const generateTicket = async (data) => {
-    return {
-      "data": {
-          "reserved_seats": booked,
-          "available_seats": available
-        }
-    }
-  }

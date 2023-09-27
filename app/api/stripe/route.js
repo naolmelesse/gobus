@@ -5,11 +5,11 @@ import { getSession } from "@auth0/nextjs-auth0";
 
 export const POST = async function handler(request, response){
   try {
-      const sessionUser = await getSession(NextRequest, NextResponse);
+      const sessionUser = await getSession(request, response);
       const user = sessionUser?.user;
       const data = await request.json();
       if(user){
-        const stripeID = user['https://gobus-liard.vercel.app/stripe_customer_id'];
+        const stripeID = user[`${process.env.BASE_URL}/stripe_customer_id`];
         
         const session = await stripe.checkout.sessions.create({
                 submit_type: "pay",
@@ -29,8 +29,8 @@ export const POST = async function handler(request, response){
                     quantity: data.quantity,
                   },
                 ],
-                    success_url: `https://gobus-liard.vercel.app/success?&session_id={CHECKOUT_SESSION_ID}`,
-                    cancel_url: `https://gobus-liard.vercel.app/canceled`,
+                    success_url: `${process.env.BASE_URL}/success?&session_id={CHECKOUT_SESSION_ID}`,
+                    cancel_url: `${process.env.BASE_URL}/canceled`,
                   });
                   return NextResponse.json(session);
       }else{
@@ -51,8 +51,8 @@ export const POST = async function handler(request, response){
                     quantity: data.quantity,
                   },
                 ],
-                    success_url: `https://gobus-liard.vercel.app/success?&session_id={CHECKOUT_SESSION_ID}`,
-                    cancel_url: `https://gobus-liard.vercel.app/canceled`,
+                    success_url: `${process.env.BASE_URL}/success?&session_id={CHECKOUT_SESSION_ID}`,
+                    cancel_url: `${process.env.BASE_URL}/canceled`,
                   });
                   return NextResponse.json(session);
       }
