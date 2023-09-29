@@ -1,5 +1,5 @@
 import { useQuery } from "urql";
-import { CITY_QUERY, BUS_PROVIDERS_QUERY } from "@/lib/query";
+import { CITY_QUERY, BUS_PROVIDERS_QUERY, GET_BOOKING_HISTORY } from "@/lib/query";
 
 export function fetchCityData(){
     const [results] = useQuery({query: CITY_QUERY});
@@ -20,7 +20,7 @@ export function fetchBusData(){
 export function fetchDataBySlug(query, slug){
     const [result] = useQuery({query: query, variables: {slug: slug}});
     const {data, fetching, error} = result;
-    if(fetching) console.log("loading... specific data");
+    if(fetching) console.log("loading... city");
     if(error) console.log(error.message);
     if(data) return data;
 
